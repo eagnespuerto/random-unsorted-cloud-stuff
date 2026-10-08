@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Random Goodreads Book</title>
+<style>
+  :root { --bg:#f4f1ea; --fg:#382110; --muted:#767676; --btn:#409d69; --btn-hover:#358a5a; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#1e1b16; --fg:#ece6d8; --muted:#a59f93; } }
+  * { box-sizing: border-box; }
+  body { margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+         background:var(--bg); color:var(--fg); font-family:Georgia, "Times New Roman", serif; padding:16px; }
+  main { max-width:32rem; text-align:center; }
+  h1 { font-size:2rem; margin:0 0 .5rem; }
+  p { line-height:1.5; color:var(--muted); }
+  button { margin-top:1rem; font:inherit; font-size:1.1rem; color:#fff; background:var(--btn);
+           border:0; border-radius:6px; padding:.8rem 1.6rem; cursor:pointer; }
+  button:hover { background:var(--btn-hover); }
+  small { display:block; margin-top:1.5rem; color:var(--muted); font-size:.8rem; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Random Book</h1>
+  <p>Goodreads used to have <code>/book/random</code>, a button that took you to a random book, like Wikipedia's Random Article. This brings it back.</p>
+  <button id="go">Take me to a random book</button>
+  <small>Picks a random Goodreads book ID. Occasionally an ID doesn't exist; just click again.</small>
+</main>
+<script>
+  // Goodreads book IDs are fairly dense below this ceiling.
+  const MAX_ID = 50000000;
+  document.getElementById('go').addEventListener('click', () => {
+    const id = Math.floor(Math.random() * MAX_ID) + 1;
+    window.location.href = 'https://www.goodreads.com/book/show/' + id;
+  });
+</script>
+</body>
+</html>
