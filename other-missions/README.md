@@ -20,7 +20,11 @@ SVOM caveat: GCN covers burst/transient follow-ups only; planned General Program
 ECLAIRs/GRM wide fields are X-ray/gamma-ray and cannot detect the object. `gcn_check.py` expects the GCN archive
 (https://gcn.nasa.gov/circulars/archive.json.tar.gz) unpacked under `miss/gcn/x/`.
 
-Euclid caveat: only released data (Q1, DR1) is searchable. The Wide Survey avoids the Galactic plane, and the object
+Euclid Q2 (released 2026-06-24, Galactic Bulge Survey): 9 VIS fields at RA 267.4–269.0°, Dec −30.2…−28.5°,
+observed 2025-03-23/24. The object was at RA 273.62°, Dec −42.88° then — 13.2° from the nearest field. Not observed.
+IRSA's Euclid collections have nothing within 6° of the track either.
+
+Euclid caveat: only released data (Q1, Q2, DR1) is searchable. The Wide Survey avoids the Galactic plane, and the object
 sits at b ≈ −11°, so unreleased survey data is also unlikely to cover it.
 
 Subaru caveat: SMOKA shows only data past its proprietary period (~18 months). Suprime-Cam, FOCAS and MOIRCS have no
