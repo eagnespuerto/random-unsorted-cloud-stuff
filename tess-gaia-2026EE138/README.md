@@ -14,6 +14,7 @@ Astrometry: `data/2026EE138.obs` (DECam W84 2013–2020, Rubin X05 2026). Epheme
 | Gaia | Mission ran 2014-07-25 – 2025-01-15 | V 22.5–22.9 → G ≈ 22.3–22.7 | Not detectable (G limit ≈ 20.7). Not in `gaiadr3.sso_source` or `gaiafpr.sso_source` |
 | Swift | HEASARC `swiftmastr`, 1,093 obs in RA 158–171°, Dec 1–9.5° | — | Never observed: closest 0.27° (UGC 5923, 2015-07-12), outside UVOT/XRT fields. No colours possible |
 | CHEOPS | ESASky `mv_cheops_obs_fdw`, all 2,938 public visits (2020-02 – 2023-12) (`scripts/cheops_check.py`) | V ≈ 22.7, far beyond CHEOPS | Not observed: closest 2.4° (EE Leo, 2021-04-08). 2024–2026 unchecked (DACE down, HTTP 503) |
+| Euclid | ESA `easidr` (DR1) and `eas` (Q1/Q2) `ivoa.obscore`; IRSA Euclid collections | V ≈ 22.7 (VIS would reach it) | Not observed: closest DR1 frame 11.3° from the track (COSMOS, RA 151.1°, Dec +2.8°); Q1/Q2 ≥ 77°; IRSA nothing within 25°. Track is at ecliptic latitude −0.7…−1.9°, which the Wide Survey avoids |
 | SPHEREx | 292 L2 frames contain the object (QR2; Apr–Jun 2025, Dec 2025, May 2026) | z ≈ 21.9 AB → ~6 µJy | Not detected: 14 ± 8 µJy (0.75–2.4 µm), 0 ± 12 µJy (2.4–5 µm) |
 
 ### TESS sectors (`data/tess_coverage.txt`)
