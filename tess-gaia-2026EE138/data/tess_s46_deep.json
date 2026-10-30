@@ -1,0 +1,30 @@
+{
+ "n_hour_bins": 17,
+ "flux_e_s": 1.085,
+ "ctrl_sigma_e_s": 0.533,
+ "snr": 2.04,
+ "T_3sigma_limit": 19.93,
+ "T_pred": 22.23,
+ "expected_flux_e_s": 0.192,
+ "reversed_snr": 0.16,
+ "stationary_snr": NaN,
+ "thirds_snr": [
+  1.83,
+  0.92,
+  1.01
+ ],
+ "bright_stars": [
+  {
+   "G": 12.5,
+   "closest_arcsec": 60.1
+  },
+  {
+   "G": 14.71,
+   "closest_arcsec": 128.0
+  },
+  {
+   "G": 14.79,
+   "closest_arcsec": 36.9
+  }
+ ]
+}

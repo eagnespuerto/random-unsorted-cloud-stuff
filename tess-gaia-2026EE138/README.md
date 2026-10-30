@@ -19,9 +19,31 @@ Astrometry: `data/2026EE138.obs` (DECam W84 2013–2020, Rubin X05 2026). Epheme
 | 46 | 2021-12-02 – 12-30 | 3/2 | 165.88°, +4.51° | ~7 px (stationary) |
 | 72 | 2023-11-11 – 12-07 | 4/2 | 166.66°, +3.99° | ~21 px, col ≈ 158 (near CCD edge) |
 
-Near-stationary motion in S45–46 means FFI stacks barely smear it, which helps a shift-stack. Field is high
-latitude (b ≈ +55°), so crowding is low. Still, V ≈ 22.7 sits at the faint end of published TESS shift-stack
-recoveries, so a detection is unlikely without a deep, careful stack.
+### Shift-stacks — not detected (`scripts/tess_shiftstack.py`, `data/tess_shiftstack.json`)
+Per sector: drop flagged and the brightest-sky 20% of frames, subtract each pixel's sector median, sample a
+north-up 21″ stamp on the predicted track, clipped mean. Noise from 8 control tracks 12 px away.
+Expected signal: T ≈ 22.2 → 0.19 e⁻/s.
+
+| Sector | Frames | Flux (e⁻/s) | Control σ | 3σ limit |
+|---|---|---|---|---|
+| 45 | 2,655 | 0.18 | 1.05 | T > 19.2 |
+| 46 | 2,748 | 1.73 | 0.66 | T > 19.7 (2.6σ bump = star residual) |
+| 72 | 6,413 | 0.07 | 0.32 | T > 20.5 |
+
+Best limit is ~1.7 mag short of the object. Noise is set by star residuals, not photon noise.
+
+### Sector 46 re-stack (`scripts/tess_s46_deep.py`, `data/tess_s46_deep.json`)
+S46 looked like the best chance (object near its stationary point), but it's the worst:
+- The object loops within ~2 px (≈40″) for the first ~3 weeks and only moves off in the last ~6 days
+  (6.3 px total). A sector-median template partly removes the object, and per-frame templates that
+  exclude the object's position exist only for the last ~17 hours of usable data.
+- A G = 12.5 star (Gaia DR3 3815098193520100224) passes 26″ (1.3 px) from the track at sector end, and a
+  G = 14.8 star 37″ from it early on. A 10-mag-brighter star leaves residuals far above 0.19 e⁻/s.
+- Re-stack (1-h bins, template from bins with the object ≥2 px away, bins within 60″ of the G = 12.5 star
+  dropped): 1.09 ± 0.53 e⁻/s (2.0σ), reversed-motion null 0.2σ, T > 19.9 (3σ). The flux is ~6× what the
+  object can give, so it's a residual, not the object.
+- A cross-sector template (S72 sky at the S46 position) would avoid self-subtraction, but camera/PSF
+  mismatch on the G = 12.5 star would still dominate. Not attempted.
 
 ## Colours (from current obs)
 
