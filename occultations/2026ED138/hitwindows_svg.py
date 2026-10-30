@@ -22,8 +22,8 @@ top,dy=200,32; yb=top+dy*len(rows)
 W,H=860,yb+110
 s=[f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {W} {H}" width="{W}" height="{H}" role="img" aria-label="Cross-track path shift that would put each space telescope in the 2026 ED138 shadow; only CHEOPS is hit at the nominal path, and each telescope has under 5 percent chance within the plus or minus 1 sigma uncertainty." font-family="DejaVu Sans, Helvetica, Arial, sans-serif" style="color:{FG}">',
 f'<rect width="{W}" height="{H}" fill="{BG}"/>',
-'<text x="24" y="30" font-size="16" font-weight="bold" fill="currentColor">2026 ED138 occultation · 2026-10-31 01:21:43 UTC</text>',
-'<text x="24" y="50" font-size="12.5" fill="currentColor">Which sideways shift of the predicted path puts each space telescope in the shadow</text>']
+f'<text x="{W/2:.0f}" y="30" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#000">2026 ED138 occultation · 2026-10-31 01:21:43 UTC</text>',
+f'<text x="{W/2:.0f}" y="48" font-size="12.5" text-anchor="middle" fill="#000">Which sideways shift of the predicted path puts each space telescope in the shadow</text>']
 # nominal shadow band and sigma lines (behind everything)
 s.append(f'<rect x="{X(-R):.1f}" y="70" width="{X(R)-X(-R):.1f}" height="{yb-70}" fill="{SH}" fill-opacity="0.14"/>')
 s.append(f'<text x="{X(0):.1f}" y="66" font-size="11" text-anchor="middle" fill="{SH}">nominal path · shadow ≈870 km</text>')
