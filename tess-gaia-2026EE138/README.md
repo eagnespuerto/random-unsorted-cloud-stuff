@@ -83,7 +83,7 @@ S46 looked like the best chance (object near its stationary point), but it's the
   (APO ephemeris, `data/eph_apo.txt`).
 - Run 3518 camcol 4 field 121 (2002-12-07): object 12 px off the frame edge — in the gap between camcols.
 - Run 6160 camcol 3 field 13 (2006-05-24, V ≈ 23.05, JPL 3σ 3.5″): no catalogued source within 12″.
-  Forced 1.5″ aperture (noise from 200 empty-sky apertures): g 0.42 ± 0.13 nmgy (3.2σ, ≈ g 23.0 total),
+  Forced 1.5″ aperture (noise from 200 empty-sky apertures): g 0.42 ± 0.13 nmgy (3.2σ, ≈ g 23.4 total; expected ≈ 23.4),
   r 1.5σ, i 1.3σ, z 0.3σ. A hint in g only; SDSS single-epoch depth (r ≈ 22.4 here) is just short.
 
 ## Subaru (`scripts/subaru_exposures.py`, `data/subaru_exposures.json`, `data/subaru_smoka.json`)
