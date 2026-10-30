@@ -1,7 +1,10 @@
-{"title": "2026 EE138", "subtitle": "TESS shift-stacks (difference images, centred on JPL prediction)",
+{"title": "2026 EE138", "subtitle": "TESS and SPHEREx shift-stacks, no detections (difference images, centred on JPL prediction)",
  "out": "stamp_grid_2026EE138.png", "ncols": 3,
  "panels": [
   {"file": "data/tess_stamps.npz", "key": "s45", "hw": 178.5, "r": 31.5, "title": "TESS S45, 2021-11-11 – 12-02", "subtitle": "not detected, T > 19.2 (3σ)", "n": 2655},
-  {"file": "data/tess_stamps.npz", "key": "s46", "hw": 178.5, "r": 31.5, "title": "TESS S46, 2021-12-07 – 12-30", "subtitle": "2.6σ residual (star), T > 19.7", "n": 2748},
-  {"file": "data/tess_stamps.npz", "key": "s72", "hw": 178.5, "r": 31.5, "title": "TESS S72, 2023-11-14 – 12-05", "subtitle": "not detected, T > 20.5 (3σ)", "n": 6413}
+  {"file": "data/tess_stamps.npz", "key": "s46", "hw": 178.5, "r": 31.5, "title": "TESS S46, 2021-12-07 – 12-30", "subtitle": "2.6σ star residual, T > 19.7", "n": 2748},
+  {"file": "data/tess_stamps.npz", "key": "s72", "hw": 178.5, "r": 31.5, "title": "TESS S72, 2023-11-14 – 12-05", "subtitle": "not detected, T > 20.5 (3σ)", "n": 6413},
+  {"file": "data/tess_s46_stamps.npz", "key": "s46_deep", "hw": 178.5, "r": 31.5, "title": "TESS S46 re-stack, 1-h bins", "subtitle": "2.0σ residual, T > 19.9 (3σ)", "n": 17},
+  {"file": "data/sx_stamps.npz", "key": "all_short", "hw": 36, "r": 7, "title": "SPHEREx 0.75–2.4 µm, all passes", "subtitle": "14 ± 8 µJy, 1.7σ (expect ~6)", "n": 123},
+  {"file": "data/sx_stamps.npz", "key": "all_long", "hw": 36, "r": 7, "title": "SPHEREx 2.4–5 µm, all passes", "subtitle": "0 ± 12 µJy", "n": 108}
  ]}

@@ -1,4 +1,6 @@
-# 2026 EE138 — TESS and Gaia search (cursory)
+# 2026 EE138 — TESS, Gaia, Swift and SPHEREx search
+
+![TESS and SPHEREx stacks](stamp_grid_2026EE138.png)
 
 TNO, a = 71.1 au, e = 0.51, i = 11.2°, H = 3.95 (JPL SBDB, orbit soln 2026-10-27, arc 2013–2026).
 Distance 72–77 au, V = 22.5–22.9 over 2014–2026. Track: RA 161.6–167.7°, Dec +7.0…+3.2°, b ≈ +54…+56°.
@@ -10,6 +12,8 @@ Astrometry: `data/2026EE138.obs` (DECam W84 2013–2020, Rubin X05 2026). Epheme
 |---|---|---|---|
 | TESS | On silicon in 3 sectors (`scripts/tess_check.py`, tess-point, sectors 1–134; matches TESSCut) | V ≈ 22.7 (T ≈ 22.2) | Covered, not detectable in single FFIs; only a shift-stack could reach it, and it's at/below that limit |
 | Gaia | Mission ran 2014-07-25 – 2025-01-15 | V 22.5–22.9 → G ≈ 22.3–22.7 | Not detectable (G limit ≈ 20.7). Not in `gaiadr3.sso_source` or `gaiafpr.sso_source` |
+| Swift | HEASARC `swiftmastr`, 1,093 obs in RA 158–171°, Dec 1–9.5° | — | Never observed: closest 0.27° (UGC 5923, 2015-07-12), outside UVOT/XRT fields. No colours possible |
+| SPHEREx | 292 L2 frames contain the object (QR2; Apr–Jun 2025, Dec 2025, May 2026) | z ≈ 21.9 AB → ~6 µJy | Not detected: 14 ± 8 µJy (0.75–2.4 µm), 0 ± 12 µJy (2.4–5 µm) |
 
 ### TESS sectors (`data/tess_coverage.txt`)
 
@@ -44,6 +48,26 @@ S46 looked like the best chance (object near its stationary point), but it's the
   object can give, so it's a residual, not the object.
 - A cross-sector template (S72 sky at the S46 position) would avoid self-subtraction, but camera/PSF
   mismatch on the G = 12.5 star would still dominate. Not attempted.
+
+## Swift (`scripts/coverage_sx_swift.py`, `data/coverage_sx_swift.json`)
+No pointing ever covered the object. Even if one had, V ≈ 22.7 is far below UVOT depth (the 2026 ED138 U-band
+detection in `../uv-xray-atmosphere` was a ~4,800 s stack of a U ≈ 21 object). No Swift colour estimates.
+
+## SPHEREx (`scripts/sx_get.py`, `scripts/sx_stack.py`, `data/sx_phot.json`)
+- IRSA ObsCore: 292 frames contain the object at exposure mid-time (`data/coverage_sx_swift.json`); QR3 has none here yet.
+- Method as in `../spherex-search`: 72″ north-up stamp per frame minus the median of ≤40 same-band, same-region
+  frames with the object >30″ away; 7″ aperture, 15–30″ annulus; 6 control tracks 2′ away.
+  882/898 cutouts downloaded (16 failed); 231 frames had enough templates.
+
+| Stack | N | Flux (µJy) | Control scatter | Verdict |
+|---|---|---|---|---|
+| Apr–Jun 2025, 0.75–2.4 µm | 36 | 9.5 | 6.0 | 1.6σ |
+| Dec 2025, 0.75–2.4 µm | 69 | 11.2 | 15.6 | <1σ |
+| May 2026, 0.75–2.4 µm | 18 | 31.7 | 18.2 | 1.7σ |
+| **All, 0.75–2.4 µm** | 123 | **13.7** | 8.0 | 1.7σ, not detected; 3σ < 24 µJy above zero |
+| All, 2.4–5 µm | 108 | 0.4 | 12.1 | nothing |
+
+Expected from Rubin/DECam z ≈ 21.9 AB: ~6 µJy at ~1 µm, i.e. ~0.8σ in the best stack. No colour/spectral constraint.
 
 ## Colours (from current obs)
 
