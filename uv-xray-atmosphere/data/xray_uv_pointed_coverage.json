@@ -1,0 +1,182 @@
+{
+ "summary": {
+  "XMM-Newton (EPIC/OM)": {
+   "n_obs": 755,
+   "closest_deg": 0.41,
+   "fov": 0.25,
+   "target": "IGR J16479-4514",
+   "date": "2012-08-21"
+  },
+  "Chandra": {
+   "n_obs": 913,
+   "closest_deg": 0.99,
+   "fov": 0.25,
+   "target": "[MCM2005b] 81 GLIMPSE81",
+   "date": "2010-06-19"
+  },
+  "Swift XRT/UVOT": {
+   "n_obs": 12483,
+   "closest_deg": 0.09,
+   "fov": 0.2,
+   "target": "IGR J16418-4532",
+   "date": "2011-07-13"
+  },
+  "ROSAT pointed": {
+   "n_obs": 426,
+   "closest_deg": 1.09,
+   "fov": 1.0,
+   "target": "ETA CEN",
+   "date": "1992-08-12"
+  },
+  "Suzaku": {
+   "n_obs": 181,
+   "closest_deg": 0.13,
+   "fov": 0.15,
+   "target": "EMS01095",
+   "date": "2011-02-11"
+  },
+  "EXOSAT": {
+   "n_obs": 214,
+   "closest_deg": 0.21,
+   "fov": 1.0,
+   "target": "EPS CRA",
+   "date": "1984-01-30"
+  },
+  "XRISM": {
+   "n_obs": 30,
+   "closest_deg": 6.29,
+   "fov": 0.3,
+   "target": "4U1822-371",
+   "date": "2025-04-12"
+  },
+  "IXPE": {
+   "n_obs": 26,
+   "closest_deg": 3.73,
+   "fov": 0.1,
+   "target": "4U 1735-44",
+   "date": "2024-08-31"
+  }
+ },
+ "hits": [
+  {
+   "mission": "Swift XRT/UVOT",
+   "target": "IGR J16418-4532",
+   "mjd0": 55758.4258564815,
+   "mjd1": 55758.9968981482,
+   "sep": 0.171,
+   "fov": 0.2,
+   "ra": 250.46762147,
+   "dec": -45.54303809
+  },
+  {
+   "mission": "Swift XRT/UVOT",
+   "target": "IGR J16418-4532",
+   "mjd0": 55756.525,
+   "mjd1": 55756.8726157407,
+   "sep": 0.098,
+   "fov": 0.2,
+   "ra": 250.39948938,
+   "dec": -45.53438966
+  },
+  {
+   "mission": "Swift XRT/UVOT",
+   "target": "IGR J16418-4532",
+   "mjd0": 55761.0770833333,
+   "mjd1": 55762.0017361111,
+   "sep": 0.189,
+   "fov": 0.2,
+   "ra": 250.43990047,
+   "dec": -45.5333691
+  },
+  {
+   "mission": "Swift XRT/UVOT",
+   "target": "IGR J16418-4532",
+   "mjd0": 55755.4055555556,
+   "mjd1": 55755.63875,
+   "sep": 0.086,
+   "fov": 0.2,
+   "ra": 250.4135689,
+   "dec": -45.53019273
+  },
+  {
+   "mission": "Swift XRT/UVOT",
+   "target": "IGR J16418-4532",
+   "mjd0": 55757.2770833333,
+   "mjd1": 55757.9937268519,
+   "sep": 0.086,
+   "fov": 0.2,
+   "ra": 250.39084519,
+   "dec": -45.49682275
+  },
+  {
+   "mission": "Swift XRT/UVOT",
+   "target": "swift_gal_survey_1014",
+   "mjd0": 56100.4763888889,
+   "mjd1": 56100.5125347222,
+   "sep": 0.12,
+   "fov": 0.2,
+   "ra": 252.47181735,
+   "dec": -45.47791877
+  },
+  {
+   "mission": "Swift XRT/UVOT",
+   "target": "swift_gal_survey_1014",
+   "mjd0": 56099.4708333333,
+   "mjd1": 56099.5082291667,
+   "sep": 0.162,
+   "fov": 0.2,
+   "ra": 252.41094086,
+   "dec": -45.42495333
+  },
+  {
+   "mission": "Swift XRT/UVOT",
+   "target": "4FGLJ1754.1-4333",
+   "mjd0": 60165.5951041667,
+   "mjd1": 60165.6327662037,
+   "sep": 0.138,
+   "fov": 0.2,
+   "ra": 268.49869607,
+   "dec": -43.50214093
+  },
+  {
+   "mission": "Suzaku",
+   "target": "EMS01095",
+   "mjd0": 55603.15443287037,
+   "mjd1": 55603.76133101852,
+   "sep": 0.135,
+   "fov": 0.15,
+   "ra": 252.3381,
+   "dec": -45.0256
+  },
+  {
+   "mission": "EXOSAT",
+   "target": "EPS CRA",
+   "mjd0": 45729.69236111,
+   "mjd1": 45729.82222222,
+   "sep": 0.211,
+   "fov": 1.0,
+   "ra": 209.58168695,
+   "dec": -37.41635206
+  },
+  {
+   "mission": "EXOSAT",
+   "target": "EPS CRA",
+   "mjd0": 45729.69236111,
+   "mjd1": 45729.82222222,
+   "sep": 0.211,
+   "fov": 1.0,
+   "ra": 209.58168695,
+   "dec": -37.41635206
+  },
+  {
+   "mission": "EXOSAT",
+   "target": "EPS CRA",
+   "mjd0": 45729.69236111,
+   "mjd1": 45729.82222222,
+   "sep": 0.211,
+   "fov": 1.0,
+   "ra": 209.58168695,
+   "dec": -37.41635206
+  }
+ ]
+}
