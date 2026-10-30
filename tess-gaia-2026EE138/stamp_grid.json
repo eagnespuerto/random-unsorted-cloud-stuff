@@ -1,0 +1,7 @@
+{"title": "2026 EE138", "subtitle": "TESS shift-stacks (difference images, centred on JPL prediction)",
+ "out": "stamp_grid_2026EE138.png", "ncols": 3,
+ "panels": [
+  {"file": "data/tess_stamps.npz", "key": "s45", "hw": 178.5, "r": 31.5, "title": "TESS S45, 2021-11-11 – 12-02", "subtitle": "not detected, T > 19.2 (3σ)", "n": 2655},
+  {"file": "data/tess_stamps.npz", "key": "s46", "hw": 178.5, "r": 31.5, "title": "TESS S46, 2021-12-07 – 12-30", "subtitle": "2.6σ residual (star), T > 19.7", "n": 2748},
+  {"file": "data/tess_stamps.npz", "key": "s72", "hw": 178.5, "r": 31.5, "title": "TESS S72, 2023-11-14 – 12-05", "subtitle": "not detected, T > 20.5 (3σ)", "n": 6413}
+ ]}
