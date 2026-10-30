@@ -1,6 +1,6 @@
-# 2026 EE138 — TESS, Gaia, Swift and SPHEREx search
+# 2026 EE138 — archival search (TESS, Gaia, Swift, SPHEREx, CHEOPS, Euclid, Subaru, SDSS, Pan-STARRS)
 
-![TESS and SPHEREx stacks](stamp_grid_2026EE138.png)
+![Pan-STARRS, TESS and SPHEREx stacks](stamp_grid_2026EE138.png)
 
 TNO, a = 71.1 au, e = 0.51, i = 11.2°, H = 3.95 (JPL SBDB, orbit soln 2026-10-27, arc 2013–2026).
 Distance 72–77 au, V = 22.5–22.9 over 2014–2026. Track: RA 161.6–167.7°, Dec +7.0…+3.2°, b ≈ +54…+56°.
@@ -15,6 +15,8 @@ Astrometry: `data/2026EE138.obs` (DECam W84 2013–2020, Rubin X05 2026). Epheme
 | Swift | HEASARC `swiftmastr`, 1,093 obs in RA 158–171°, Dec 1–9.5° | — | Never observed: closest 0.27° (UGC 5923, 2015-07-12), outside UVOT/XRT fields. No colours possible |
 | CHEOPS | ESASky `mv_cheops_obs_fdw`, all 2,938 public visits (2020-02 – 2023-12) (`scripts/cheops_check.py`) | V ≈ 22.7, far beyond CHEOPS | Not observed: closest 2.4° (EE Leo, 2021-04-08). 2024–2026 unchecked (DACE down, HTTP 503) |
 | Euclid | ESA `easidr` (DR1) and `eas` (Q1/Q2) `ivoa.obscore`; IRSA Euclid collections | V ≈ 22.7 (VIS would reach it) | Not observed: closest DR1 frame 11.3° from the track (COSMOS, RA 151.1°, Dec +2.8°); Q1/Q2 ≥ 77°; IRSA nothing within 25°. Track is at ecliptic latitude −0.7…−1.9°, which the Wide Survey avoids |
+| **Pan-STARRS1** | 3π warps via ps1filenames/fitscut: 137 epochs 2009–2015, 113 warps contain the position, ~50 usable (rest in gaps) | V ≈ 22.8–22.9 | **Detected in shift-stack: g+r+i 13.8σ, i = 22.43 ± 0.11, r = 22.91 ± 0.29** — see below |
+| SDSS | DR18 `Field` table, 8,149 fields; 2 runs contain the track | V ≈ 23.1 | 2002 run in a camcol gap; 2006-05-24 frame: g 3.2σ hint, r/i < 2σ. Not detected |
 | **Subaru** | SMOKA, all instruments, 477,926 frames in 57 1° tiles along the 1999–2026 track (`scripts/smoka_tiles.py`, `scripts/smoka_check.py`) | V 22.7–23.1 | **Covered: 22 exposures (2004, 2016, 2020), expected S/N ~20–80 each. 2020 HSC-SSP has g, r, i, z, Y** — see below |
 | SPHEREx | 292 L2 frames contain the object (QR2; Apr–Jun 2025, Dec 2025, May 2026) | z ≈ 21.9 AB → ~6 µJy | Not detected: 14 ± 8 µJy (0.75–2.4 µm), 0 ± 12 µJy (2.4–5 µm) |
 
@@ -51,6 +53,38 @@ S46 looked like the best chance (object near its stationary point), but it's the
   object can give, so it's a residual, not the object.
 - A cross-sector template (S72 sky at the S46 position) would avoid self-subtraction, but camera/PSF
   mismatch on the G = 12.5 star would still dominate. Not attempted.
+
+## Pan-STARRS1 (`scripts/ps1_warps.py`, `scripts/ps1_warps_refine.py`, `scripts/ps1_stack.py`, `data/ps1_stack.json`)
+- Warp list: `ps1filenames.py` along the track, then re-queried at the exact object position for each of the
+  137 epochs (113 warps contain it; 24 epochs fall outside every skycell's exposure). 63 warps are blank (NaN)
+  at the position (chip gaps / masks), leaving ~50.
+- Stack: 60″ cutouts, nJy via `FPA.ZP` + `EXPTIME`, north-up 0.25″ grid on the JPL position, 3σ-clipped mean.
+  1.5″ aperture (≈ total flux for ~1.2″ seeing), 6–10″ annulus; noise from 8 control positions 15″ away.
+
+| Filter | Epochs | Dates | Flux (nJy) | S/N | AB mag | Median-stack S/N |
+|---|---|---|---|---|---|---|
+| g | 6 | 2011–2013 | 252 ± 524 | 0.5 | > 23.4 (3σ) | 0.9 |
+| r | 10 | 2010–2014 | 2,498 ± 663 | 3.8 | 22.91 ± 0.29 | 3.6 |
+| **i** | 13 | 2012–2015 | 3,885 ± 391 | **9.9** | **22.43 ± 0.11** | 10.2 |
+| z | 9 | 2010–2013 | 3,624 ± 1,511 | 2.4 | 22.50 ± 0.46 | 2.5 |
+| y | 14 | 2009–2015 | 2,802 ± 3,834 | 0.7 | > 21.3 (3σ) | 0.4 |
+| **g+r+i** | 29 | 2010–2015 | 2,516 ± 183 | **13.8** | — | 13.2 |
+
+- Checks: centroid 0.15–0.2″ from the JPL prediction; median stack agrees (not driven by one epoch);
+  jackknife i 6.9σ (2012-02 – 2014-02) and 7.2σ (2014-02 – 2015-01). Static sources can't follow a
+  track spread over 2.5° of sky and 5 years.
+- Colours (PS1 system): r − i = 0.48 ± 0.31 (Rubin 0.26 — consistent at 0.7σ); i − z = −0.07 ± 0.47;
+  g − r > 0.5 (consistent with DECam 0.58). Expected i ≈ 22.35 from Rubin/DECam — matches.
+- Caveat: a stack gives average brightness and confirms the orbit back to ~2010, but no per-epoch astrometry
+  for the MPC (single epochs are S/N ~2–3).
+
+## SDSS (`scripts/sdss_check.py`, `scripts/sdss_forced.py`, `data/sdss_*.json`)
+- SkyServer DR18 `Field` table, 8,149 fields in RA 154–170°, Dec 1–12°, matched at each field's r-band time
+  (APO ephemeris, `data/eph_apo.txt`).
+- Run 3518 camcol 4 field 121 (2002-12-07): object 12 px off the frame edge — in the gap between camcols.
+- Run 6160 camcol 3 field 13 (2006-05-24, V ≈ 23.05, JPL 3σ 3.5″): no catalogued source within 12″.
+  Forced 1.5″ aperture (noise from 200 empty-sky apertures): g 0.42 ± 0.13 nmgy (3.2σ, ≈ g 23.0 total),
+  r 1.5σ, i 1.3σ, z 0.3σ. A hint in g only; SDSS single-epoch depth (r ≈ 22.4 here) is just short.
 
 ## Subaru (`scripts/subaru_exposures.py`, `data/subaru_exposures.json`, `data/subaru_smoka.json`)
 SMOKA lists one frame per CCD (HSC 112, Suprime-Cam 10), so 2,158 matching frames = 22 exposures.
