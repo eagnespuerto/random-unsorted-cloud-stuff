@@ -25,3 +25,13 @@ shadow of the 2026-10-31 ~01:21 UTC event (star RA 18h11m15.97s, Dec −42°13�
 Caveats: 3σ ephemeris uncertainty (0.04–0.07″ ≈ 1,400–2,400 km) exceeds the ~900 km shadow, so paths need
 astrometric refinement before each event; body size is assumed; ground tracks (night side, star altitude) are not
 computed yet. Stars are 3–6 mag brighter than the object (V ≈ 19.7), so drops are near-total — good for atmosphere tests.
+
+## 2026-10-31 event — outcome (checked 2026-10-31 09:42 UTC, ~8 h after)
+Ground track (`groundtrack_20261031.py`, `groundtrack_20261031.json`; 2026-10-29 orbit, 400 km body radius):
+- Geocentric closest approach 1,372 km at 01:23:40 UTC; shadow speed 23.3 km/s; 3σ cross-track uncertainty ~2,180 km.
+- Nominal path: Indian Ocean west of Australia (01:19) → Southern Ocean / South Pacific (01:21–01:25) → toward the
+  coast of Ecuador (01:28, star on the horizon). Only the eastern-Pacific segment was in darkness — open ocean.
+- Chile (Rubin/Gemini-S/CTIO, La Silla, Las Campanas, Paranal): star at 26–29°, full night, but 2,140–2,450 km from the
+  centre-line → ~2.5–3σ, roughly 0.3–1% chance. Siding Spring / Mt John: daytime.
+- No observation reports found publicly as of the check; reports would normally go to IOTA / Lucky Star.
+- The older prediction used by `occ.py` (0.099″ geocentric offset) differs from the 2026-10-29 orbit (0.044″).
