@@ -1,0 +1,26 @@
+[
+ {
+  "sector": 39,
+  "utc": "2021-06-03 06:42:00",
+  "btjd": 2368.78523,
+  "cadence_s": 600,
+  "event_cadence_quality": 0,
+  "event_cadence_offset_from_baseline_sigma": 1.54,
+  "rms_e_per_s": 6.8,
+  "expected_max_dip_e_per_s": 5.1,
+  "expected_dip_in_sigma": 0.75,
+  "p_hit": 0.017
+ },
+ {
+  "sector": 66,
+  "utc": "2023-06-14 06:36:00",
+  "btjd": 3109.78126,
+  "cadence_s": 200,
+  "event_cadence_quality": 0,
+  "event_cadence_offset_from_baseline_sigma": 0.94,
+  "rms_e_per_s": 12.2,
+  "expected_max_dip_e_per_s": 21.1,
+  "expected_dip_in_sigma": 1.72,
+  "p_hit": 0.015
+ }
+]
