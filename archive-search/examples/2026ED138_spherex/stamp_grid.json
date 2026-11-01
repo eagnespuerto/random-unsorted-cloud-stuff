@@ -1,0 +1,80 @@
+{
+ "title": "2026 ED138",
+ "ncols": 3,
+ "out": "stamp_grid_2026ED138_archsearch.png",
+ "subtitle": "SPHEREx frames found by archsearch, template-subtracted stacks centred on JPL prediction",
+ "panels": [
+  {
+   "file": "stamps_grid.npz",
+   "key": "k0",
+   "hw": 36,
+   "r": 7.0,
+   "title": "SPHEREx 0.75–2.4 µm (D1–D3), 2026 03-20–04-03",
+   "subtitle": "67 ± 10 µJy (6.8σ)",
+   "n": 45
+  },
+  {
+   "file": "stamps_grid.npz",
+   "key": "k1",
+   "hw": 36,
+   "r": 7.0,
+   "title": "SPHEREx 2.4–5.0 µm (D4–D6), 2026 03-20–04-03",
+   "subtitle": "-16 ± 10 µJy, not detected",
+   "n": 43
+  },
+  {
+   "file": "stamps_grid.npz",
+   "key": "k2",
+   "hw": 36,
+   "r": 7.0,
+   "title": "SPHEREx D1, 2026 03-20–04-03",
+   "subtitle": "58 ± 14 µJy (4.3σ)",
+   "n": 15
+  },
+  {
+   "file": "stamps_grid.npz",
+   "key": "k3",
+   "hw": 36,
+   "r": 7.0,
+   "title": "SPHEREx D2, 2026 03-20–04-03",
+   "subtitle": "70 ± 14 µJy (5.0σ)",
+   "n": 15
+  },
+  {
+   "file": "stamps_grid.npz",
+   "key": "k4",
+   "hw": 36,
+   "r": 7.0,
+   "title": "SPHEREx D3, 2026 03-20–04-03",
+   "subtitle": "124 ± 39 µJy (3.1σ)",
+   "n": 15
+  },
+  {
+   "file": "stamps_grid.npz",
+   "key": "k5",
+   "hw": 36,
+   "r": 7.0,
+   "title": "SPHEREx D4, 2026 03-20–04-03",
+   "subtitle": "6 ± 10 µJy, not detected",
+   "n": 12
+  },
+  {
+   "file": "stamps_grid.npz",
+   "key": "k6",
+   "hw": 36,
+   "r": 7.0,
+   "title": "SPHEREx D5, 2026 03-20–04-03",
+   "subtitle": "-18 ± 16 µJy, not detected",
+   "n": 16
+  },
+  {
+   "file": "stamps_grid.npz",
+   "key": "k7",
+   "hw": 36,
+   "r": 7.0,
+   "title": "SPHEREx D6, 2026 03-20–04-03",
+   "subtitle": "-23 ± 31 µJy, not detected",
+   "n": 16
+  }
+ ]
+}
