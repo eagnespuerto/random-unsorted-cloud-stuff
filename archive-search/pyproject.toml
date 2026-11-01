@@ -1,0 +1,21 @@
+[project]
+name = "archsearch"
+version = "0.1.0"
+description = "Search public telescope archives (IVOA ObsCore) and the literature for an object over a date range."
+requires-python = ">=3.10"
+dependencies = ["pyvo>=1.5", "astropy>=6.0", "astroquery>=0.4.7", "requests>=2.31"]
+
+[project.optional-dependencies]
+agent = ["anthropic>=0.70"]
+test = ["pytest"]
+
+[project.scripts]
+archsearch = "archsearch.cli:main"
+archsearch-ask = "archsearch.agent:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["archsearch"]
