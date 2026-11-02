@@ -1,0 +1,62 @@
+{
+ "title": "2026 RY158",
+ "ncols": 3,
+ "out": "stamp_grid_2026RY158.png",
+ "subtitle": "SPHEREx frames before discovery (template-subtracted, centred on JPL prediction)",
+ "panels": [
+  {
+   "file": "data/sx_stamps.npz",
+   "key": "k0",
+   "hw": 90,
+   "r": 7.0,
+   "n": 5,
+   "title": "SPHEREx D1 (0.75–1.09 µm), 2026-08-15",
+   "subtitle": "1.46 ± 0.05 mJy (29σ)"
+  },
+  {
+   "file": "data/sx_stamps.npz",
+   "key": "k1",
+   "hw": 90,
+   "r": 7.0,
+   "n": 7,
+   "title": "SPHEREx D1 (0.75–1.09 µm), 2026-08-22–24",
+   "subtitle": "1.45 ± 0.04 mJy (37σ)"
+  },
+  {
+   "file": "data/sx_stamps.npz",
+   "key": "k2",
+   "hw": 90,
+   "r": 7.0,
+   "n": 5,
+   "title": "SPHEREx D1 (0.75–1.09 µm), 2026-09-03–05",
+   "subtitle": "2.06 ± 0.03 mJy (73σ)"
+  },
+  {
+   "file": "data/sx_stamps.npz",
+   "key": "k3",
+   "hw": 90,
+   "r": 7.0,
+   "n": 5,
+   "title": "SPHEREx D1 (0.75–1.09 µm), 2026-09-08–09",
+   "subtitle": "1.94 ± 0.02 mJy (98σ)"
+  },
+  {
+   "file": "data/sx_stamps.npz",
+   "key": "k4",
+   "hw": 90,
+   "r": 7.0,
+   "n": 22,
+   "title": "SPHEREx D1 (0.75–1.09 µm), 2026-08-15–09-09",
+   "subtitle": "1.70 ± 0.06 mJy (27σ)"
+  },
+  {
+   "file": "data/sx_stamps.npz",
+   "key": "k5",
+   "hw": 90,
+   "r": 7.0,
+   "n": 21,
+   "title": "SPHEREx D4 (2.42–3.82 µm), 2026-08-15–09-09",
+   "subtitle": "0.36 ± 0.03 mJy (11σ)"
+  }
+ ]
+}
