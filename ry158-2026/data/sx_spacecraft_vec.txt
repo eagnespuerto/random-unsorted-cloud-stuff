@@ -1,0 +1,168 @@
+API VERSION: 1.2
+API SOURCE: NASA/JPL Horizons API
+
+*******************************************************************************
+ Revised: Nov 01, 2026         SPHEREx Spacecraft / Sun                 -163182
+                    https://www.jpl.nasa.gov/missions/spherex/
+      https://d2pn8kiwq2w21t.cloudfront.net/documents/spherex-press-kit.pdf
+                   https://www.youtube.com/watch?v=eOfoWtt0TP8
+ 
+ Spectro-Photometer for the History of the Universe, Epoch of Reionization,
+ and Ices Explorer ("SPHEREx") is a NASA/JPL mission launched to Earth orbit
+ March 12 @ 03:10 UTC from Space Launch Complex 4 East (SLC-4E), Vandenberg
+ Space Force Base, via a Falcon 9.
+ 
+ There will then be a 30-day checkout phase to prepare for operations.
+ 
+ BACKGROUND:
+  During its nominally 25-month mission, it will use a single instrument
+  (spectrophotometer) with a single observing mode and no moving parts to map
+  the entire sky every 6 months (four times during the two year mission), in
+  102 different color bands, with much greater color resolution than prior
+  all-sky maps.
+ 
+  From an Earth-polar 98-minute orbit ~650 km above the terminator line
+  (thereby keeping pointing at least 91 degrees away from the Sun), SPHEREx
+  will collect data on more than 450 million galaxies along with more than
+  100 million stars in the Milky Way in order to characterize the origin
+  of the universe.
+ 
+ PHYSICAL CHARACTERISTICS:
+  Dimensions  : 2.6 m tall, 3.2 m wide and deep
+  solar panels: 2.67 x 1.02 m, produce 750 Watts
+  Total mass  : 502 kg
+  Detectors passively cooled to -350 deg. F (-210 C)
+  Three cone-shaped photon shields protect from ambient heat
+ 
+ SCIENCE INSTRUMENT:
+  Spectrophotometer has three mirrors (effective diameter, 20 cm)
+   11 x 3.5 degree field of view
+   Six linear variable filters image each section of the sky in
+    102 wavelengths of near-infrared
+ 
+ TRAJECTORY:
+  Concatenated TLEs from Space-Track, with prediction 30 days into the future.
+ 
+ Name                                                   Start (TDB) Stop (TDB)
+ ------------------------------------------------------ ----------- -----------
+ SPHEREx (Concatenated TLEs)                            2025-Mar-11 latest+ 30d
+*******************************************************************************
+
+
+*******************************************************************************
+Ephemeris / API_USER Sun Nov  1 21:42:18 2026 Pasadena, USA      / Horizons
+*******************************************************************************
+Target body name: SPHEREx (spacecraft) (-163182)  {source: SPHEREx}
+Center body name: Earth (399)                     {source: DE441}
+Center-site name: BODY CENTER
+*******************************************************************************
+Start time      : A.D. 2026-Aug-15 07:00:05.8928 UT 
+Stop  time      : A.D. 2026-Sep-09 01:45:57.0117 UT 
+Step-size       : DISCRETE TIME-LIST
+*******************************************************************************
+Center geodetic : 0.0, 0.0, 0.0                   {E-lon(deg),Lat(deg),Alt(km)}
+Center cylindric: 0.0, 0.0, 0.0                   {E-lon(deg),Dxy(km),Dz(km)}
+Center radii    : 6378.137, 6378.137, 6356.752 km {Equator_a, b, pole_c}
+Output units    : KM-S
+Calendar mode   : Mixed Julian/Gregorian
+Output type     : GEOMETRIC cartesian states
+Output format   : 1 (position only)
+EOP file        : eop.261030.p270126
+EOP coverage    : DATA-BASED 1962-JAN-20 TO 2026-OCT-30. PREDICTS-> 2027-JAN-25
+Reference frame : ICRF
+*******************************************************************************
+            JDUT ,            Calendar Date (UT ),                      X,                      Y,                      Z,
+**************************************************************************************************************************
+$$SOE
+2461267.791734871, A.D. 2026-Aug-15 07:00:05.8928, -4.735964143241832E+02,  9.786975592940958E+02, -6.949743915705023E+03,
+2461267.793227127, A.D. 2026-Aug-15 07:02:14.8238,  1.486269665931698E+02,  1.709521146640822E+03, -6.820692041899698E+03,
+2461267.927636652, A.D. 2026-Aug-15 10:15:47.8067, -4.140146716644925E+02,  1.051934722372982E+03, -6.942684341725826E+03,
+2461268.471030622, A.D. 2026-Aug-15 23:18:17.0457, -2.661230075405071E+02,  1.239844491489145E+03, -6.918375731846590E+03,
+2461275.258676212, A.D. 2026-Aug-22 18:12:29.6247, -3.919845153809974E+02,  1.227297625810125E+03, -6.911873211448396E+03,
+2461275.260168481, A.D. 2026-Aug-22 18:14:38.5568,  1.338138844463791E+02,  2.021022522700123E+03, -6.731902554245171E+03,
+2461275.261660726, A.D. 2026-Aug-22 18:16:47.4867,  6.570674264537292E+02,  2.776433209479595E+03, -6.424021259165542E+03,
+2461275.263152995, A.D. 2026-Aug-22 18:18:56.4188,  1.167865422756390E+03,  3.479189835089584E+03, -5.993956917193860E+03,
+2461286.526924129, A.D. 2026-Sep-03 00:38:46.2448, -3.887870218969284E+02,  1.698300927042610E+03, -6.807996193203337E+03,
+2461287.747410935, A.D. 2026-Sep-04 05:56:16.3048, -7.134638349425858E+02,  9.340497105875639E+02, -6.928568960960952E+03,
+2461288.834714060, A.D. 2026-Sep-05 08:01:59.2948, -4.451462170815778E+02,  1.710495538812874E+03, -6.801161362927732E+03,
+2461289.445437185, A.D. 2026-Sep-05 22:41:25.7728, -4.951037012238392E+02,  1.616481692670720E+03, -6.820641883889389E+03,
+2461292.295644048, A.D. 2026-Sep-08 19:05:43.6458, -6.700472253599783E+02,  1.268692946224268E+03, -6.878873796581834E+03,
+2461292.569099766, A.D. 2026-Sep-09 01:39:30.2198, -3.156056443040520E+02,  2.447315371535898E+03, -6.579260994035293E+03,
+2461292.570592023, A.D. 2026-Sep-09 01:41:39.1508, -3.340499884373787E+01,  3.296314454247236E+03, -6.205553620561892E+03,
+2461292.572084268, A.D. 2026-Sep-09 01:43:48.0808,  2.494281848569777E+02,  4.082696411857960E+03, -5.713668815090675E+03,
+2461292.573576524, A.D. 2026-Sep-09 01:45:57.0117,  5.275223672437629E+02,  4.791477583344409E+03, -5.112884453565355E+03,
+$$EOE
+**************************************************************************************************************************
+ 
+TIME
+
+ Times PRIOR to 1962 are UT1, a mean-solar time closely related to the
+prior but now-deprecated GMT. Times AFTER 1962 are in UTC, the current
+civil or "wall-clock" atomic time-scale. UTC is kept within 0.9 seconds
+of UT1 using integer leap-seconds for 1972 and later years.
+
+  Conversion from the internal Barycentric Dynamical Time (TDB) of solar
+system dynamics to the discontinuous civil UT time-scale has not been
+determined for UTC times after the next July or January 1st. Therefore,
+the last known leap-second is used as a constant over future intervals,
+a condition noted here as "UT~".
+
+  Future but as yet undetermined leap-seconds can be expected to change
+time-tags in the "UT~" interval and, in general, the UT scale may not be
+suitable for purposes that assume time-tag continuity in the ephemeris.
+Output in continuous TDB and TT timescales may instead be requested,
+though these are not linked to Earth's rotation.
+
+  Time-tags refer to the UT time-scale conversion from TDB on Earth
+regardless of observer location within the solar system, although clock
+rates may differ due to the local gravity field and no analog to "UT"
+may be defined for that location.
+ 
+CALENDAR SYSTEM
+
+  Mixed calendar mode was active such that calendar dates after AD 1582-Oct-15
+(if any) are in the modern Gregorian system. Dates prior to 1582-Oct-5 (if any)
+are in the Julian calendar system, which is automatically extended for dates
+prior to its adoption on 45-Jan-1 BC.  The Julian calendar is useful for
+matching historical dates. The Gregorian calendar more accurately corresponds
+to the Earth's orbital motion and seasons. A "Gregorian-only" calendar mode is
+available if such physical events are the primary interest.
+
+REFERENCE FRAME AND COORDINATES
+
+  International Celestial Reference Frame (ICRF)
+
+    The ICRF is an adopted reference frame whose axes are defined relative to 
+    fixed extragalactic radio sources distributed across the sky.
+
+    The ICRF was aligned with the prior FK5/J2000 dynamical system at the ~0.02 
+    arcsecond level but is not identical and has no associated standard epoch.
+
+  Symbol meaning:
+
+    JDUT     Julian Day Number, Universal Time
+      X      X-component of position vector (km)
+      Y      Y-component of position vector (km)
+      Z      Z-component of position vector (km)
+
+ABERRATIONS AND CORRECTIONS
+
+ Geometric state vectors have NO corrections or aberrations applied.
+
+Computations by ...
+
+    Solar System Dynamics Group, Horizons On-Line Ephemeris System
+    4800 Oak Grove Drive, Jet Propulsion Laboratory
+    Pasadena, CA  91109   USA
+
+    General site: https://ssd.jpl.nasa.gov/
+    Mailing list: https://ssd.jpl.nasa.gov/email_list.html
+    System news : https://ssd.jpl.nasa.gov/horizons/news.html
+    User Guide  : https://ssd.jpl.nasa.gov/horizons/manual.html
+    Connect     : browser        https://ssd.jpl.nasa.gov/horizons/app.html#/x
+                  API            https://ssd-api.jpl.nasa.gov/doc/horizons.html
+                  command-line   telnet ssd.jpl.nasa.gov 6775
+                  e-mail/batch   https://ssd.jpl.nasa.gov/ftp/ssd/horizons_batch.txt
+                  scripts        https://ssd.jpl.nasa.gov/ftp/ssd/SCRIPTS
+    Inquiries   : Jon.D.Giorgini@jpl.nasa.gov
+*******************************************************************************
