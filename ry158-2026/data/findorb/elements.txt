@@ -1,0 +1,27 @@
+Orbital elements:  RY158SX
+   Perihelion 2031 Jan 1.99853 +/- 17.3 TT = 23:57:52 (JD 2462868.49853)
+Epoch 2026 Sep  9.0 TT = JDT 2461292.5                           Find_Orb
+M 360.00000000 +/- 0.042            (J2000)
+n   0.00000000 +/- 3.84e-8          Peri.  325.15507 +/- 0.9
+a <HUGE> +/- 13.1                   Node   190.08781 +/- 0.13
+e   0.9999999 +/- 0                 Incl.   95.43924 +/- 0.010
+P!!!!!!!      U  1.6
+q 11.0636855 +/- 0.106    Q <HUGE> +/- 6.64e+12
+From 17 observations 2026 Aug. 15-Sept. 9; mean residual 0".43
+# State vector (heliocentric equatorial J2000):
+#   -0.609755633133  +4.091131877767 -13.005958658502 AU
+#   -5.704139923380  -1.924400703159  +2.668963013470 mAU/day
+# MOIDs: Me 10.731580 Ve 10.484904 Ea 10.228033 Ma  9.701861
+# MOIDs: Ju  6.331183 Sa  2.579612 Ur  5.882454 Ne 17.473817
+# 1 oppositions
+# Elements written:  2 Nov 2026  5:47:49 (JD 2461346.741543)
+# Full range of obs: 2026 Aug. 15-Sept. 9 (17 observations)
+# Find_Orb ver: 2026 Oct 21
+# Perturbers: 00000000 (unperturbed orbit);  not using JPL DE
+# Tisserand relative to Neptune: -0.16263
+# Score: 0.866104
+#  $Name=RY158SX  $Ty=2031  $Tm=01  $Td=01.998526  $MA=360.00000
+#  $ecc=1.0000000  $Eqnx=2000.
+#  $a=1000000.0000000  $Peri=325.15507  $Node=190.08781  $Incl=95.43925
+#  $EpJD=2461292.500  $q=11.063686  $T=2462868.498526  $H=0.0
+# Sigmas avail: 1

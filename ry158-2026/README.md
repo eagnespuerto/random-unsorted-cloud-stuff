@@ -36,3 +36,18 @@ python scripts/sx_get.py            # ~480 cutouts into sx/cut (not committed, ~
 python scripts/sx_stack.py
 python ../.claude/skills/stamp-grid/make_stamp_grid.py stamp_grid.json
 ```
+
+## Astrometry and ADES (not yet submitted)
+
+- **Positions:** `scripts/sx_astrometry.py` fitted 17 D1 positions (2026-08-15 to 09-09).
+  - Each is a Gaussian fit on the reference-subtracted image, tied per frame to 6–12 Gaia DR3 stars.
+  - Uncertainties are 0.4–0.9″. Five frames were dropped because the object fit was below S/N 5.
+  - Results are in `data/sx_astrometry.json`.
+- **ADES file:** `scripts/write_ades.py` writes `data/2026RY158_sphrx_ades.xml`.
+  - Station 288, with SPHEREx geocentric positions from Horizons (`data/sx_spacecraft_vec.txt`).
+  - Filed under the tracklet label `RY158SX`. It validates against IAU-ADES `submit.xsd`.
+- **Find_Orb check** (`data/findorb/`): run on these 17 positions alone (unperturbed, no JPL DE).
+  - Mean residual 0.43″. Every residual is ≤ 1.0″ and within 1.7σ, so there are no outliers and the stated errors are realistic.
+  - Resulting orbit: q = 11.06 ± 0.11 au, i = 95.44°, node 190.09°, peri 325.16°, perihelion 2031 Jan 2. JPL gives 11.04 au, 95.47°, 189.69°, 325.38°, 2031 Jan 15.
+  - e is pinned near 1 because a 25-day arc can't constrain a.
+- **Before submitting:** SPHEREx isn't on the MPC's SARC archive list, so the MPC should be contacted first (per their SARC page).
