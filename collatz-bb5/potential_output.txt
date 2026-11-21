@@ -1,0 +1,13 @@
+A  j=1  max mean cycle weight = 0.4055  (log 3/2 = 0.4055)
+A  j=2  max mean cycle weight = 0.4055  (log 3/2 = 0.4055)
+A  j=3  max mean cycle weight = 0.4055  (log 3/2 = 0.4055)
+A  j=4  max mean cycle weight = 0.4055  (log 3/2 = 0.4055)
+A  j=5  max mean cycle weight = 0.4055  (log 3/2 = 0.4055)
+A  j=6  max mean cycle weight = 0.4055  (log 3/2 = 0.4055)
+A  j=7  max mean cycle weight = 0.4055  (log 3/2 = 0.4055)
+A  j=8  max mean cycle weight = 0.4055  (log 3/2 = 0.4055)
+B  negative-integer cycles (min elt: length m, odd steps k, k ln3 - m ln2): {-1: (1, 1, 0.4055), -10: (3, 2, 0.1178), -136: (11, 7, 0.0657)}
+C  n in [3,1e6): max log(orbit max)/log n = 2.560 at n=27 -> g(n) >= 1.560*log n - C
+C  n in [1000,1e6): max log(orbit max)/log n = 1.909 at n=159487 -> g(n) >= 0.909*log n - C
+C  n in [100000,1e6): max log(orbit max)/log n = 1.909 at n=159487 -> g(n) >= 0.909*log n - C
+D  density of residue classes mod 2^k with no descent certificate: {10: 0.0625, 20: 0.02606201171875, 50: 0.0033166890828795204, 100: 0.00023867828362647393, 200: 3.0604236615202414e-06}

@@ -67,3 +67,6 @@ dielectric-breakdown / DLA lightning, except that branching is set by n mod 3 ra
 A possible line to pursue: combine §2 and §4 into a **potential function** `V(n) = log n + c·f(n mod 2^k)`, built so
 that the AM–GM gap shows up in every single window of k steps, not just on average. A V that strictly decreases
 everywhere would prove the conjecture. The no-short-cycles result is the one piece of this that is actually proved.
+
+**Follow-up:** the potential-function attempt is in [`potential.md`](potential.md) (it fails, and the file proves why).
+The literature check is in [`novelty.md`](novelty.md) (nothing here is new).
