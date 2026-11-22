@@ -22,7 +22,7 @@ In 1859 Bernhard Riemann wrote an 8-page paper with a new tool, the **zeta funct
 
 ζ(s) = 1 + 1/2ˢ + 1/3ˢ + 1/4ˢ + …
 
-Euler had already seen that this same sum can be rewritten as a product with one piece for each prime. So whatever zeta does, it is secretly doing with the primes.
+Euler had already seen that this same sum can be rewritten as a product with one piece for each prime. So anything zeta does depends on the primes.
 
 Riemann's move was to feed it complex numbers, points on a flat plane instead of a number line. The function then has places where its output is exactly zero. These are its **zeros**.
 
@@ -38,9 +38,9 @@ Riemann computed a few zeros by hand and found all of them on the centre line. H
 
 That guess is the **Riemann Hypothesis**: every non-trivial zero lies exactly on the critical line.
 
-Computers have since checked more than ten trillion zeros, and all of them are on the line. That is evidence, not proof. Infinitely many zeros are left, and in number theory patterns sometimes break at sizes no computer will reach.
+Computers have since checked more than ten trillion zeros, and all of them are on the line. That still says nothing about the infinitely many zeros left, and in number theory patterns sometimes break at sizes no computer will reach.
 
-If the hypothesis is true, the noise in the primes is as small as it could possibly be, about the square root of the size of the numbers you look at. Up to a trillion, the error in the smooth estimate would be no bigger than about a million times a small factor. Thousands of published theorems begin with "assume the Riemann Hypothesis", so a proof turns all of them into plain theorems at once.
+If the hypothesis is true, the noise in the primes is as small as it could possibly be, about the square root of the size of the numbers you look at. Up to a trillion, the count of primes would be within about 1.1 million of the smooth estimate (Lowell Schoenfeld worked out this bound in 1976). Thousands of published theorems begin with "assume the Riemann Hypothesis", so a proof turns all of them into plain theorems at once.
 
 It has a $1 million Clay Millennium Prize attached. It was also on Hilbert's list of big problems in 1900.
 
@@ -52,7 +52,7 @@ Alpöge's code claims both: RH for zeta, and GRH for every Dirichlet L-function.
 
 ## Part 4. Lean, the proof checker
 
-Alpöge did not publish a paper. He published a program in **Lean**.
+Alpöge published a program in **Lean** instead of a paper.
 
 Lean is a programming language where a program is a proof. Each step has to follow from earlier steps by the basic rules of logic. A small core program, the **kernel**, checks every step. If the kernel accepts the whole file, the theorem is proved.
 
@@ -82,7 +82,7 @@ The GRH statements are a different case. Mathlib does not have them yet, so they
 
 ## Part 6. Who checked it
 
-On release day, nobody had built the code. It takes a very large machine. Within about a day, three independent checks were done, and the Lean and Mathlib communities issued a statement.
+On release day, nobody had built the code. It takes a very large machine. Within about a day, three independent groups had checked it, and the Lean and Mathlib communities had issued a statement.
 
 **Andrew Sutherland (MIT)** compiled the whole project separately. Scientific American quoted him saying the proof was "independently rechecked by the Lean kernel with only the three standard axioms." His public record (updated 12:55 UTC on 21 November) reports all 175,187 modules compiling with zero errors on Lean v4.33.1. Two separate kernels written by other people, nanoda and con-leche, each accepted the full exported proof. A third, lean4lean, accepted every compiled module.
 
@@ -104,7 +104,7 @@ The code is about **17.4 million lines** in **175,187 files**. All of Mathlib is
 
 Alpöge says that if you wrote it out for humans, it would currently fill more than **250,000 pages**. His timeline runs from 6 October to 16 November 2026, about six weeks, with Claude writing most of the code.
 
-Most of those lines are not new ideas. They are decades of known mathematics that nobody had typed into Lean before: class field theory, the Chebotarev density theorem, abelian varieties, Shimura varieties, p-adic Hodge theory, the representation theory of big symmetry groups. Many folders are named `PublishedTheorems`. Before the new idea could run, the computer had to learn a large slice of modern number theory.
+Most of those lines are decades of known mathematics that nobody had typed into Lean before: class field theory, the Chebotarev density theorem, abelian varieties, Shimura varieties, p-adic Hodge theory, the representation theory of big symmetry groups. Many folders are named `PublishedTheorems`. Before the new idea could run, the computer had to learn a large slice of modern number theory.
 
 | Folder | Lines | What's in it |
 |---|---:|---|
@@ -121,7 +121,7 @@ Now the proof itself, from the top down.
 
 Zeta has a built-in symmetry called the **functional equation**. It ties the value at a point on the left of the centre line to the value at its mirror image on the right. So zeros come in mirror pairs. If there is a zero at some spot to the left of the line, there is one at the matching spot to the right.
 
-That means you only have to prove one thing: **there are no zeros to the right of the line.** If none are on the right, the mirror says none are on the left. Every zero is then on the line.
+That means you only have to prove that no zeros lie to the right of the line. If none are on the right, the mirror says none are on the left. Every zero is then on the line.
 
 Mathematicians have known this reduction for about 150 years. In the Lean code it lives in `src/Formalism/GammaFactorNonvanishing/CritLine.lean`. Line 16 starts with a step called `lt_or_gt_of_ne`, which says "a zero off the line is either left of it or right of it". The proof then rules out each side. Alpöge jokes in his note that Claude's draft write-up opened the same way.
 
@@ -149,15 +149,15 @@ Alpöge's new idea fills that gap.
 
 There is a classical tool called a **theta lift**. It starts with an **automorphic form**, a function with an enormous amount of symmetry. Modular forms, the objects at the heart of the proof of Fermat's Last Theorem, are the simplest examples. A theta lift takes such a form living on one symmetry group and produces a new form on a bigger group.
 
-His observation is that **one theta lift behaves like one derivative.** Each lift adds one level of "zero many times over". Chain *m* lifts together, through a sequence of bigger and bigger groups, and you get multiplicity *m*. That is exactly what Stepanov's counting argument needs, and now it works over the whole numbers.
+His observation is that one theta lift behaves like one derivative. Each lift adds one level of "zero many times over". Chain *m* lifts together, through a sequence of bigger and bigger groups, and you get multiplicity *m*. Stepanov's counting argument needs exactly that, and now it works over the whole numbers.
 
-How long a chain? To control the primes up to some size *X*, the chain needs about **√X** lifts. The square root is the same square root from Part 3, the size of the noise RH promises. Alpöge writes that this is the line that will make fellow mathematicians "fall out of their chairs".
+To control the primes up to some size *X*, the chain needs about √X lifts. That is the same square root as in Part 3, the size of the noise RH promises. Alpöge writes that this is the line that will make fellow mathematicians "fall out of their chairs".
 
 He also says some of the description in his note is his paraphrase of Claude's summary of the code, and might need revising. The human-level account of this step is still being worked out.
 
 ## Part 11. The supporting cast
 
-Many other famous results do jobs inside the argument. Alpöge's note names them. Below is what each one is in general. How each one fits into this proof is in his note, and in places he says even that is still provisional.
+Many older results do jobs inside the argument. Alpöge's note names them. Below is what each one is in general. How each one fits into this proof is in his note, and in places he says even that is still provisional.
 
 - **Iwasawa towers**: an infinite stack of number fields, each built on the last. Alpöge's note uses them as the whole-number stand-in for a pigeonhole-style counting step that works easily in the toy world.
 - **The Rallis seesaw**: a classical identity that compares two different theta lifts.
