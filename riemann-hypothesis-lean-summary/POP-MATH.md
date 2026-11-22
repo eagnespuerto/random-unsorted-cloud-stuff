@@ -29,7 +29,7 @@ In Lean, every step of a proof is checked by the computer all the way down to th
 
 The second point is the clever part. The author did not write his own version of the statement. He used the one already in **Mathlib**, a large shared library of mathematics written by many people long before this proof existed. So he could not quietly prove a weaker, easier version.
 
-Since the release, the proof has been built and checked independently by others, twice. Both checks confirmed it.
+Within a day of the release, Andrew Sutherland (MIT) and two other independent groups built the code and confirmed it uses only Lean's three standard axioms. On 21 November the Lean and Mathlib communities certified both the statement and the proof. The details are in [LONG-EXPLAINER.md](LONG-EXPLAINER.md#part-6-who-checked-it).
 
 The proof also covers the **Generalised Riemann Hypothesis** for a family of cousins of zeta called *Dirichlet L-functions*. These control, for example, how primes split between those ending in 1, 3, 7 and 9.
 
@@ -42,7 +42,7 @@ It is huge.
 - The author says a human-readable write-up would currently run to **more than 250,000 pages**.
 - It was produced in about **six weeks** (6 October to 16 November 2026), with heavy help from AI.
 
-Most of those lines are not new mathematics. They are decades of *known* mathematics that had never been typed into Lean before. Whole folders are literally named `PublishedTheorems`. Before the new idea could be used, the computer had to be taught a big part of modern number theory.
+Most of those lines are not new mathematics. They are decades of *known* mathematics that had never been typed into Lean before. Whole folders are named `PublishedTheorems`. Before the new idea could be used, the computer had to be taught a big part of modern number theory.
 
 ## The idea, in three steps
 
@@ -52,7 +52,7 @@ The zeros all live inside a band. The Riemann Hypothesis says they sit exactly o
 
 The zeta function has a built-in symmetry: what happens on the left of the centre line is a mirror image of what happens on the right. So if you can show there are **no zeros to the right** of the line, the mirror tells you there are none to the left either. The only place left is the line itself.
 
-Mathematicians have known this for about 150 years. In the Lean code, this final step is short and readable. The proof literally begins: "either the zero is left of the line, or right of it". Then it rules out both.
+Mathematicians have known this for about 150 years. In the Lean code, this final step is short and readable. The proof begins: "either the zero is left of the line, or right of it". Then it rules out both.
 
 So the whole difficulty is one claim: **no zeros to the right of the line.**
 
@@ -80,7 +80,7 @@ Many famous tools from number theory help along the way, including Iwasawa tower
 
 ## What it means
 
-**The theorem is settled.** The statement is the community's own. The code has been checked independently. Every result that began with "assume the Riemann Hypothesis" now stands on its own, including the strongest known estimates for how primes are spread out.
+**The theorem is settled.** The RH statement is Mathlib's own, and the 16-line GRH file was read and approved by the checkers. The code has been checked independently. Every result that began with "assume the Riemann Hypothesis" now stands on its own, including the strongest known estimates for how primes are spread out.
 
 **Understanding is not settled.** This is a strange new situation. We know the proof is correct, but no human has followed all of it. The author is open about this. Mathematicians will now spend years reading, simplifying and explaining it, and maybe finding the short proof inside the long one.
 
