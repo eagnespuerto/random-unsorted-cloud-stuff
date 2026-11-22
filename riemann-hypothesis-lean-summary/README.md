@@ -20,7 +20,7 @@ Riemann let $s$ be a **complex number** and extended the function to the whole p
 - **trivial zeros** at $-2, -4, -6, \dots$, which are boring;
 - infinitely many **non-trivial zeros**, all known to lie in the strip $0 < \text{Re}(s) < 1$ (the "critical strip").
 
-**RH:** every non-trivial zero has real part exactly $\tfrac12$. In other words, they all sit on one vertical line, the "critical line".
+**RH:** every non-trivial zero has real part exactly $\tfrac12$, so they all sit on one vertical line, the "critical line".
 
 Why it matters: the zeros act like frequencies in a Fourier series for the primes. If they all lie on the line, then the prime-counting function differs from its smooth estimate $\int_2^x \frac{dt}{\ln t}$ by about $\sqrt{x}$ at most, which is the smallest error you could hope for. So the primes are as evenly spread as they could possibly be.
 
