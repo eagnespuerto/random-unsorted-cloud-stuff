@@ -2,6 +2,7 @@
 
 **Subject:** [eagnespuerto/riemann-hypothesis-lean](https://github.com/eagnespuerto/riemann-hypothesis-lean), a fork of an unmodified mirror of the Lean code Levent Alpöge published on 2026-11-20 (announcement: <https://alpo.ge/remark.pdf>).
 **Written for:** someone comfortable with algebra through Calculus 1 who has watched some 3Blue1Brown / Numberphile-type videos.
+**Update (2026-11-22):** the proof has since been independently built and validated by others, twice. For a lighter, formula-free version, see [POP-MATH.md](POP-MATH.md). The "how much should you believe it" section below reflects the situation on release day.
 **Status (2026-11-20):** a *claimed* proof. As far as I know no one has independently compiled and checked the code yet, and I did not compile it here: it is about 17 million lines and needs a very large machine. Everything below comes from reading the source files and the author's 4-page note.
 
 ---
