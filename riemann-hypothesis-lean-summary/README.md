@@ -1,7 +1,8 @@
-# The Lean "proof" of the Riemann Hypothesis — a plain-language summary
+# The Lean proof of the Riemann Hypothesis: a plain-language summary
 
 **Subject:** [eagnespuerto/riemann-hypothesis-lean](https://github.com/eagnespuerto/riemann-hypothesis-lean), a fork of an unmodified mirror of the Lean code Levent Alpöge published on 2026-11-20 (announcement: <https://alpo.ge/remark.pdf>).
 **Written for:** someone comfortable with algebra through Calculus 1 who has watched some 3Blue1Brown / Numberphile-type videos.
+**Update (2026-11-22):** the proof has since been independently built and checked (Sutherland at MIT, plus two other groups), and the Lean and Mathlib communities certified it on 21 November. For a lighter, formula-free version, see [POP-MATH.md](POP-MATH.md). For a longer part-by-part version with sources, see [LONG-EXPLAINER.md](LONG-EXPLAINER.md). The "how much should you believe it" section below reflects the situation on release day.
 **Status (2026-11-20):** a *claimed* proof. As far as I know no one has independently compiled and checked the code yet, and I did not compile it here: it is about 17 million lines and needs a very large machine. Everything below comes from reading the source files and the author's 4-page note.
 
 ---
@@ -21,7 +22,7 @@ Riemann let $s$ be a **complex number** and extended the function to the whole p
 
 **RH:** every non-trivial zero has real part exactly $\tfrac12$. In other words, they all sit on one vertical line, the "critical line".
 
-Why it matters: the zeros act like frequencies in a Fourier series for the primes. If they all lie on the line, then the prime-counting function differs from its smooth estimate $\int_2^x \frac{dt}{\ln t}$ by about $\sqrt{x}$ at most, which is the smallest error you could hope for. Put simply, the primes are as evenly spread as they could possibly be.
+Why it matters: the zeros act like frequencies in a Fourier series for the primes. If they all lie on the line, then the prime-counting function differs from its smooth estimate $\int_2^x \frac{dt}{\ln t}$ by about $\sqrt{x}$ at most, which is the smallest error you could hope for. So the primes are as evenly spread as they could possibly be.
 
 **GRH (Generalized RH)** makes the same claim for a whole family of cousins of zeta, the **Dirichlet L-functions** $L(s,\chi) = \sum \chi(n)/n^s$. Here $\chi$ is a "character", a repeating pattern of weights that can pick out primes in a given residue class, for example primes ending in 7. Zeta itself is the simplest member of the family ($\chi$ = all 1's).
 
@@ -34,7 +35,7 @@ Lean is a programming language for writing proofs that a computer checks line by
 
 This is why the author published Lean code rather than a paper. He says a human-readable write-up would currently run to more than 250,000 pages.
 
-## 3. What the code literally claims
+## 3. What the code claims
 
 The whole claim fits in two short files.
 
@@ -51,7 +52,7 @@ def RiemannHypothesis : Prop :=
   ∀ s, riemannZeta s = 0 → (s is not -2, -4, -6, …) → s ≠ 1 → s.re = 1/2
 ```
 
-Read it as: "for every complex s, if ζ(s) = 0, s is not a trivial zero, and s ≠ 1, then the real part of s is ½." This matters because the author cannot quietly weaken the statement: it was written by other people long before.
+Read it as: "for every complex s, if ζ(s) = 0, s is not a trivial zero, and s ≠ 1, then the real part of s is ½." So the author cannot quietly weaken the statement, because other people wrote it long before.
 
 **`src/Statements.lean`** (16 lines, imports only Mathlib) defines the GRH versions: zeros of every Dirichlet L-function in the critical strip have real part ½, and these L-functions are never zero to the right of the line.
 
@@ -73,7 +74,7 @@ In words: no zeros to the right of the critical line. Everything follows from th
 
 The Lean proof even opens with "either Re(s) < ½ or Re(s) > ½" (`lt_or_gt_of_ne`). The author jokes that Claude's draft write-up started the same way.
 
-**So the entire difficulty is proving there are no zeros with Re(s) > ½.** This part of the logic is completely standard. Mathematicians have known for 150 years that RH is equivalent to it.
+So the entire difficulty is proving there are no zeros with Re(s) > ½. This part of the logic is completely standard. Mathematicians have known for 150 years that RH is equivalent to it.
 
 ### Layer 2: `everyCharacter`, where the real work starts
 
@@ -88,11 +89,11 @@ From here down the vocabulary becomes graduate and research level.
 
 From the author's note (he says some of it is his paraphrase of Claude's summary and might need revision):
 
-1. **The template is a known proof over "function fields".** RH has a cousin for curves over finite fields, which André Weil proved in the 1940s. **Stepanov** later found an elementary proof. Its trick: build an auxiliary polynomial that vanishes at the points you want to count *with high multiplicity* (a root of order $m$, the way $(x-a)^m$ has one). A polynomial of bounded degree cannot have too many high-multiplicity roots, so you get an upper bound on the count. That bound is exactly RH-quality.
+1. **The template is a known proof over "function fields".** RH has a cousin for curves over finite fields, which André Weil proved in the 1940s. **Stepanov** later found an elementary proof. Its trick is to build an auxiliary polynomial that vanishes at the points you want to count *with high multiplicity* (a root of order $m$, the way $(x-a)^m$ has one). A polynomial of bounded degree cannot have too many high-multiplicity roots, so you get an upper bound on the count. That bound is exactly RH-quality.
 
 2. **The obstacle over the ordinary integers.** "Multiplicity" means taking derivatives, and you cannot differentiate whole numbers. That obstacle is roughly why the function-field proof never carried over to the actual primes.
 
-3. **The new trick: theta lifts as stand-in derivatives.** "Theta lifts" are a classical way to move automorphic forms (highly symmetric functions, cousins of modular forms) from one symmetry group to a bigger one. The insight is that **each theta lift acts like one extra order of multiplicity**. Chain $m$ of them together, $U(X_0) \to U(X_1) \to \cdots \to U(X_m)$, and you get multiplicity $m$, as Stepanov needs.
+3. **The new trick: theta lifts as stand-in derivatives.** "Theta lifts" are a classical way to move automorphic forms (highly symmetric functions, cousins of modular forms) from one symmetry group to a bigger one. The insight is that each theta lift acts like one extra order of multiplicity. Chain $m$ of them together, $U(X_0) \to U(X_1) \to \cdots \to U(X_m)$, and you get multiplicity $m$, as Stepanov needs.
 
 4. **The famous line.** To control a prime sum up to $X$, the chain needs length about $\sqrt{X}$. The $\sqrt{X}$ is the same square-root size that shows up in the RH error term. The author calls this the line that will "make fellow mathematicians fall out of their chairs".
 
@@ -102,7 +103,7 @@ The author is open that the argument is probably far longer than necessary, and 
 
 ### Layer 4: the foundations (most of the 17 million lines)
 
-Most of the code isn't new math. It formalizes decades of *existing* math that Mathlib does not have yet: class field theory, Chebotarev density, abelian varieties, Shimura varieties and toroidal compactifications, representation theory of real and p-adic groups, local Langlands pieces, p-adic Hodge theory, and so on. Many folders are literally named `PublishedTheorems`. The main areas:
+Most of the code formalizes decades of existing math that Mathlib does not have yet: class field theory, Chebotarev density, abelian varieties, Shimura varieties and toroidal compactifications, representation theory of real and p-adic groups, local Langlands pieces, p-adic Hodge theory, and so on. Many folders are named `PublishedTheorems`. The main areas:
 
 | Folder | Files | Lines | Roughly |
 |---|---:|---:|---|
@@ -126,11 +127,11 @@ For scale: this is about 8 times the size of all of Mathlib, which took a commun
 
 **Points still open:**
 
-- **Nobody has built it yet** (as of the mirror date). A text scan cannot replace actually compiling and running `#print axioms riemannHypothesis`. The clean answer would list only `propext`, `Classical.choice`, `Quot.sound`.
+- **Nobody has built it yet** (as of the mirror date). A text scan cannot replace compiling and running `#print axioms riemannHypothesis`. The clean answer would list only `propext`, `Classical.choice`, `Quot.sound`.
 - There are 22 custom tactic macros and one `addDecl` metaprogram. These are probably harmless, but they need checking. An independent kernel re-check (`lean4checker`) would settle that.
 - The human-level understanding barely exists yet, and the author says so himself. Even a fully verified proof will take mathematicians a long time to digest, simplify and explain.
 
-**Bottom line:** the logic at the top is simple and standard: no zeros right of ½, plus the mirror symmetry, gives RH. All the weight rests on a gigantic, machine-generated formalization of a genuinely new idea: Stepanov's multiplicity trick, rebuilt from about $\sqrt{X}$ chained theta lifts. If the code compiles with only standard axioms, then RH and GRH for Dirichlet L-functions are proved, whether or not any human understands every step.
+**Bottom line:** the logic at the top is simple and standard. No zeros right of ½, plus the mirror symmetry, gives RH. All the weight rests on a gigantic, machine-generated formalization of a new idea, Stepanov's multiplicity trick rebuilt from about $\sqrt{X}$ chained theta lifts. If the code compiles with only standard axioms, then RH and GRH for Dirichlet L-functions are proved, whether or not any human understands every step.
 
 ---
 
